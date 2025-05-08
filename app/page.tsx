@@ -6,23 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, Twitter, ExternalLink, Code, Briefcase, User, ChevronRight } from "lucide-react"
-import { useEffect, useState } from "react"
 
 export default function DeveloperLandingPage() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Calculate mouse position relative to the center of the screen
-      const x = (e.clientX / window.innerWidth - 0.5) * 20
-      const y = (e.clientY / window.innerHeight - 0.5) * 20
-      setMousePosition({ x, y })
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
   return (
     <div className="flex min-h-screen flex-col bg-black text-gray-300">
       <header className="sticky top-0 z-40 border-b border-gray-900 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60">
@@ -104,118 +89,68 @@ export default function DeveloperLandingPage() {
                 </Link>
               </div>
             </div>
+            {/* Profile Image Section with Aesthetic Shape */}
             <div className="flex items-center justify-center">
-              {/* Enhanced aesthetic profile image */}
-              <div className="relative w-[350px] h-[450px] mx-auto perspective">
-                {/* Background frame with subtle animation */}
-                <div
-                  className="absolute w-[90%] h-[90%] top-[5%] left-[5%] border border-white/10 rounded-xl"
-                  style={{
-                    transform: `rotateX(${mousePosition.y * 0.1}deg) rotateY(${mousePosition.x * 0.1}deg)`,
-                    transition: "transform 0.1s ease-out",
-                  }}
-                ></div>
+              <div className="relative w-[320px] h-[400px] mx-auto">
+                {/* Soft glow background effect */}
+                <div className="absolute w-[80%] h-[80%] top-[10%] left-[10%] bg-white/5 rounded-full blur-3xl"></div>
 
-                {/* Main image container */}
-                <div
-                  className="absolute inset-0 overflow-hidden shadow-2xl shadow-white/5"
-                  style={{
-                    transform: `rotateX(${mousePosition.y * 0.05}deg) rotateY(${mousePosition.x * 0.05}deg) translateZ(20px)`,
-                    transition: "transform 0.1s ease-out",
-                  }}
-                >
-                  {/* Image mask with diagonal cut */}
-                  <div className="w-full h-full relative clip-path-diagonal">
-                    {/* Image */}
-                    <Image
-                      src="/images/profile.jpeg"
-                      fill
-                      alt="Developer portrait at Mount Rinjani summit"
-                      className="object-cover"
-                      style={{
-                        filter: "contrast(1.1) brightness(1.05)",
-                      }}
-                    />
+                {/* Main image container with organic shape */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="w-full h-full relative">
+                    {/* Blob shape mask for the image */}
+                    <div className="absolute inset-0 blob-shape overflow-hidden">
+                      {/* Base image */}
+                      <Image
+                        src="/images/profile.jpeg"
+                        alt="Developer portrait"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
 
-                    {/* Overlay effects */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 mix-blend-overlay"></div>
+                      {/* Gradient overlays for aesthetic effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-transparent to-black/60 mix-blend-overlay"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40"></div>
 
-                    {/* Side blur effects */}
-                    <div className="absolute top-0 bottom-0 left-0 w-[15%] bg-gradient-to-r from-black to-transparent"></div>
-                    <div className="absolute top-0 bottom-0 right-0 w-[15%] bg-gradient-to-l from-black to-transparent"></div>
+                      {/* Vignette effect */}
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          boxShadow: "inset 0 0 100px rgba(0,0,0,0.8)",
+                        }}
+                      ></div>
 
-                    {/* Scanlines effect */}
-                    <div className="absolute inset-0 bg-scanlines opacity-10"></div>
-
-                    {/* Glitch effect lines */}
-                    <div className="absolute h-[1px] w-full bg-white/20 top-[30%] left-0 glitch-line"></div>
-                    <div className="absolute h-[1px] w-full bg-white/20 top-[60%] left-0 glitch-line-delayed"></div>
-                    <div className="absolute h-full w-[1px] bg-white/20 top-0 left-[25%] glitch-line"></div>
-                    <div className="absolute h-full w-[1px] bg-white/20 top-0 left-[75%] glitch-line-delayed"></div>
+                      {/* Subtle grain texture */}
+                      <div
+                        className="absolute inset-0 opacity-20"
+                        style={{
+                          backgroundImage:
+                            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+                          backgroundRepeat: "repeat",
+                          mixBlendMode: "overlay",
+                        }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Decorative elements */}
-                <div
-                  className="absolute -bottom-4 -right-4 w-20 h-20 grid grid-cols-3 grid-rows-3 gap-2 z-0"
-                  style={{
-                    transform: `rotateX(${mousePosition.y * 0.2}deg) rotateY(${mousePosition.x * 0.2}deg) translateZ(40px)`,
-                    transition: "transform 0.1s ease-out",
-                  }}
-                >
-                  {[...Array(9)].map((_, i) => (
-                    <div key={i} className="w-2 h-2 rounded-full bg-white/30"></div>
-                  ))}
-                </div>
-
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white/30"></div>
-                <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-white/30"></div>
-                <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-white/30"></div>
-                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white/30"></div>
+                {/* Subtle shadow effect */}
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-[70%] h-[20px] bg-black blur-xl opacity-50 rounded-full"></div>
               </div>
             </div>
 
-            {/* Add this CSS to the top of your component */}
+            {/* CSS for the blob shape */}
             <style jsx global>{`
-              .perspective {
-                perspective: 1000px;
+              .blob-shape {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+                animation: morph 8s ease-in-out infinite;
               }
               
-              .clip-path-diagonal {
-                clip-path: polygon(
-                  0 0,
-                  100% 0,
-                  100% 85%,
-                  85% 100%,
-                  0 100%
-                );
-              }
-              
-              .bg-scanlines {
-                background: repeating-linear-gradient(
-                  to bottom,
-                  transparent 0px,
-                  transparent 1px,
-                  rgba(255, 255, 255, 0.05) 1px,
-                  rgba(255, 255, 255, 0.05) 2px
-                );
-              }
-              
-              @keyframes glitch {
-                0% { opacity: 1; }
-                50% { opacity: 0.5; }
-                51% { opacity: 1; }
-                100% { opacity: 1; }
-              }
-              
-              .glitch-line {
-                animation: glitch 5s infinite;
-              }
-              
-              .glitch-line-delayed {
-                animation: glitch 7s infinite;
-                animation-delay: 2s;
+              @keyframes morph {
+                0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+                50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+                100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
               }
             `}</style>
           </div>
@@ -299,14 +234,13 @@ export default function DeveloperLandingPage() {
                   className="overflow-hidden bg-black border-2 border-gray-900 text-gray-400 hover:border-gray-700 transition-all duration-200 shadow-lg hover:shadow-black/20"
                 >
                   <div className="aspect-video relative">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10 mix-blend-overlay z-20"></div>
                     <Image
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image || "/placeholder.svg?height=200&width=400"}
                       alt={project.title}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                   </div>
                   <CardHeader className="px-6 pt-6 pb-4">
                     <CardTitle className="text-white text-xl">{project.title}</CardTitle>
