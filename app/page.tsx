@@ -229,18 +229,18 @@ export default function DeveloperLandingPage() {
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   {
-                    title: "Hadirin - Presensi Pegawai",
+                    title: "TimeSnap - Employee Attendance",
                     description:
-                      "Sistem presensi pegawai berbasis web menggunakan Filament. Memudahkan pencatatan kehadiran dan laporan kehadiran dengan fitur lengkap.",
+                      "Web-based employee attendance system with comprehensive features for tracking attendance and generating reports. Built with modern technologies for a seamless user experience.",
                     tags: ["Laravel", "Filament", "PHP", "MySQL", "Tailwind CSS"],
-                    image: "/images/hadirin-project.png",
+                    image: "/images/timesnap-project.png",
                   },
                   {
-                    title: "E-commerce Platform",
+                    title: "OkeTrack - Inventory Management",
                     description:
-                      "A full-featured online store with payment processing, inventory management, and admin dashboard.",
-                    tags: ["Next.js", "MongoDB", "Stripe", "Tailwind CSS"],
-                    image: "/placeholder.svg?height=200&width=400",
+                      "A comprehensive inventory and transaction management platform with real-time tracking, secure access, automated reports, and smart analytics designed to streamline business operations.",
+                    tags: ["Laravel", "PHP", "MySQL", "JavaScript", "Bootstrap"],
+                    image: "/images/oketrack-project.png",
                   },
                   {
                     title: "Task Management App",
