@@ -6,7 +6,7 @@ import Head from "next/head"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, Twitter, ExternalLink, Code, Briefcase, User, ChevronRight } from "lucide-react"
+import { Github, Linkedin, Mail, ExternalLink, Code, Briefcase, User, ChevronRight } from "lucide-react"
 
 export default function DeveloperLandingPage() {
   return (
@@ -95,16 +95,12 @@ export default function DeveloperLandingPage() {
                     <span className="sr-only">GitHub</span>
                   </Link>
                   <Link
-                    href="https://www.linkedin.com/in/achmad-fadillah-a75244316"
+                    href="https://www.linkedin.com/in/achmad-fadillah-a75244316/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Linkedin className="h-6 w-6 text-gray-600 hover:text-white transition-colors" />
                     <span className="sr-only">LinkedIn</span>
-                  </Link>
-                  <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <Twitter className="h-6 w-6 text-gray-600 hover:text-white transition-colors" />
-                    <span className="sr-only">Twitter</span>
                   </Link>
                 </div>
               </div>
@@ -423,16 +419,12 @@ export default function DeveloperLandingPage() {
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link
-                href="https://www.linkedin.com/in/achmad-fadillah-a75244316"
+                href="https://www.linkedin.com/in/achmad-fadillah-a75244316/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Linkedin className="h-5 w-5 text-gray-600 hover:text-white transition-colors" />
                 <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5 text-gray-600 hover:text-white transition-colors" />
-                <span className="sr-only">Twitter</span>
               </Link>
               <Link href="mailto:ahmadfadillah12222@gmail.com">
                 <Mail className="h-5 w-5 text-gray-600 hover:text-white transition-colors" />
