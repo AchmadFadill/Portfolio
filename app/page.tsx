@@ -121,8 +121,8 @@ export default function DeveloperLandingPage() {
                       <div className="absolute inset-0 blob-shape overflow-hidden">
                         {/* Base image */}
                         <Image
-                          src="/images/profile.jpeg"
-                          alt="Developer portrait"
+                          src="/images/new-profile.jpeg"
+                          alt="Developer portrait in Singapore"
                           fill
                           className="object-cover"
                           priority
